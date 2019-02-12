@@ -1,2 +1,5 @@
-# Free-Time-Organizer
-Website with tables keep track of movies to watch, books to read etc.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+It will allow to create customizable tables to organize movies, series to watch, books to read, games to play etc 
+
+Work in progress
