@@ -1,35 +1,70 @@
-const moviesInput = document.querySelector('#moviesInput');
-const seriesInput = document.querySelector('#seriesInput');
-const booksInput = document.querySelector('#booksInput');
-const gamesInput = document.querySelector('#gamesInput');
+const moviesTable = document.querySelector('.table-movies');
+const seriesTable = document.querySelector('.table-series');
+const booksTable = document.querySelector('.table-books');
+const gamesTable = document.querySelector('.table-games');
 
 const moviesButton = document.querySelector('#moviesButton');
 const seriesButton = document.querySelector('#seriesButton');
 const booksButton = document.querySelector('#booksButton');
-const gamesIButton = document.querySelector('#gamesButton');
+const gamesButton = document.querySelector('#gamesButton');
 
-const buttons = [moviesButton, seriesButton, booksButton, gamesButton]
+const buttons = [moviesButton, seriesButton, booksButton, gamesButton];
 
-// const movies = JSON.parse(localStorage.getItem('items')) || [];
-// const series = JSON.parse(localStorage.getItem('items')) || [];
-// const books = JSON.parse(localStorage.getItem('items')) || [];
-// const games = JSON.parse(localStorage.getItem('items')) || [];
+
+const movies = JSON.parse(localStorage.getItem('movies')) || [];
+const series = JSON.parse(localStorage.getItem('series')) || [];
+const books = JSON.parse(localStorage.getItem('books')) || [];
+const games = JSON.parse(localStorage.getItem('games')) || [];
+
+const items = [movies, series, books, games];
 
 const addItem = (event) => {
+	
 	event.preventDefault()// stops from reloading
-	const input = event.target.previousElementSibling;
-	const table = input.parentElement.parentElement.parentElement.parentElement;
-	const newItem = document.createElement('li');
-	newItem.appendChild(document.createTextNode(input.value));
-	const ul = table.querySelector('ul');
-	ul.appendChild(newItem);
+
+	let table;
+	let index;
+		switch(event.target.id) {
+		case 'moviesButton':
+			table = moviesTable;
+			index = 0;
+			break;
+		case 'seriesButton':
+			table = seriesTable;
+			index = 1;
+			break;
+		case 'booksButton':
+			table = booksTable;
+			index = 2;
+			break;
+		case 'gamesButton':
+			table = gamesTable;
+			index = 3;
+			break;
+	}
+
+	console.log(table);
+	
+	const input = table.querySelector('input[type="text"]');
+	items[index].push({ name: input.value, done: 0});
+
+		const ul = table.querySelector('ul');
+
+
 	input.value = '';
 
+	   ul.innerHTML = items[index].map((item, i) => {
+      return `
+      <li>
+        <input type="checkbox" data-index=${i} id="item${i}" ${item.done ? 'checked' : ''}/>
+        <label for="item${i}">${item.name}</label>
+      </li>
+
+      `
+    }).join(''); 
+
 }
 
-const updateTables = () => {
-
-}
 
 buttons.forEach(button => button.addEventListener('click', addItem));
 

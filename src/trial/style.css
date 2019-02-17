@@ -64,7 +64,7 @@ li {
   font-family: Georgia, cursive;
 }
 
-button {
+input[type="submit"] {
   padding: 5px;
   background-color:  #1F5073;
   color: white;
