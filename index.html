@@ -4,6 +4,9 @@
 	<title>Free Time Organizer</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Laila" rel="stylesheet">
+
 </head>
 <body>
 	<div class="title">
@@ -18,10 +21,12 @@
 				<img src="img/movies.png">
 				<div class="main">
 					<h2>Movies to Watch</h1>
-					<span class="add-panel">
-						<input type="text" id="moviesInput">
-						<input type="submit" id="moviesButton" value="Add">
-					</span>
+
+						<form class="add-panel">
+							<input type="text" id="moviesInput">
+							<input type="submit" id="moviesButton" value="Add">
+						</form>
+					
 				</div>
 			</div>
 			<ul>
@@ -39,10 +44,10 @@
 				<img src="img/series.png">
 				<div class="main">
 					<h2>Series to Watch</h1>
-					<span class="add-panel">
+					<form class="add-panel">
 						<input type="text" id="seriesInput">
 						<input type="submit" id="seriesButton" value="Add">
-					</span>
+					</form>
 				</div>
 			</div>
 			<ul>
@@ -56,10 +61,10 @@
 				<img src="img/books.png">
 				<div class="main">
 					<h2>Books to Read</h1>
-					<span class="add-panel">
+					<form class="add-panel">
 						<input type="text" id="booksInput">
 						<input type="submit" id="booksButton" value="Add">
-					</span>
+					</form>
 				</div>
 			</div>
 			<ul>
@@ -73,13 +78,29 @@
 				<img src="img/games.png">
 				<div class="main">
 					<h2>Games to Play</h1>
-					<span class="add-panel">
+					<form class="add-panel">
 						<input type="text" id="gamesInput">
 						<input type="submit" id="gamesButton" value="Add">
-					</span>
+					</form>
 				</div>
 			</div>
 			<ul>
+
+			</ul>
+		</div>
+
+<!-- 				<div class="table table-new">
+			<div class="header">
+				<img src="img/new.png">
+				<div class="main">
+					<h2>Your own list</h1>
+					<form class="add-panel">
+						<input type="text" id="gamesInput">
+						<input type="submit" id="gamesButton" value="Add">
+					</form>
+				</div>
+			</div>
+			<ul> -->
 
 			</ul>
 		</div>

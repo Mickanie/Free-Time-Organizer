@@ -1,0 +1,170 @@
+body {
+   font-family: 'Amatic SC', cursive;
+
+   /*background-color: #4F4F4F;*/
+  /* background: url('https://png.pngtree.com/thumb_back/fw800/back_pic/04/02/28/525803948b1c165.jpg');*/
+  background-image: url('./img/background.jpg');
+   background-size: cover;
+     background-repeat: no-repeat;
+     bacgkround-position: center bottom;
+     height: 100vh;
+}
+
+.title {
+  margin-top: 70px;
+  text-align: center;
+
+}
+h1 {
+  font-size: 50px;
+  font-weight: 500px;
+}
+
+.tables {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80vw;
+  margin: auto;
+}
+
+.table {
+  border: 2px solid black;
+  border-radius: 15px;
+  flex: 1 1 300px;
+  background-color: rgba(0,0,0,0.3);
+  margin: 10px;
+  align-self: flex-start;
+  max-width: 600px;
+  
+}
+
+.header {
+  display: flex;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-color: rgba(0,0,0,0.5);
+
+
+}
+
+.header img {
+  width: 70px;
+  height: 70px;
+  margin: 10px;
+}
+
+.main h2 {
+  margin: 10px;
+
+  color: white;
+}
+
+.main { 
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+
+}
+
+.main input {
+  flex: 1;
+  background-color: #B6D6D0;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+form { 
+  display:flex;
+  wrap: nowrap;
+ }
+
+input[type="submit"] {
+  padding: 7px;
+  background-color:  #1F5073;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  margin-left:5px;
+}
+
+
+
+ul {
+   list-style-type: none;
+}
+
+ul button {
+  padding: 0;
+  background-color: rgba(0,0,0,0);
+  border: 0;
+  outline:0;
+  margin-left: 10px;
+}
+
+li {
+  font-family: 'Laila', serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+}
+
+
+
+
+ul input {
+  display: none;
+}
+
+ul input + label:before {
+
+  margin-right: 10px;
+   content: "\f058";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: gray;
+}
+
+ul input:checked + label:before {
+  content: "\f058";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #68BA75;
+}
+
+li button {
+  visibility: hidden;
+}
+
+li:hover button {
+  visibility: visible;
+}
+
+.delete-img {
+  height: 20px;
+  width: auto;
+  vertical-align: bottom;
+}
+
+
+
+footer {
+  position: fixed;
+  bottom: 0;
+  font-family: Georgia, cursive;
+  font-size: 15px;
+}
+
+@media only screen and (max-width: 890px) {
+  .title {
+    margin-top: 30px;
+  }
+
+  li button {
+    visibility: visible;
+  }
+
+  body {
+      background-size: 100% 100%;
+  }
+}
