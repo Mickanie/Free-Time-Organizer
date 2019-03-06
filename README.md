@@ -7,8 +7,9 @@ Things can be set "done" and deleted from the list.
 
 #Work in progress
 #Planned developments: 
-Customizing: adding new tables of chosen content
+Customizing: adding new tables of chosen content - partly done
 Graphical improvements
 Code refactoring
 
 ![alt text](https://raw.githubusercontent.com/MickanieFree-Time-Organizer/master/img/page.JPG)
+![alt text](https://raw.githubusercontent.com/MickanieFree-Time-Organizer/master/img/page2.JPG)

@@ -23,8 +23,8 @@
 					<h2>Movies to Watch</h1>
 
 						<form class="add-panel">
-							<input type="text" id="moviesInput">
-							<input type="submit" id="moviesButton" value="Add">
+							<input  class="item-input" type="text" id="movies-input">
+							<input type="submit" id="movies-button" data-index="1" value="Add">
 						</form>
 					
 				</div>
@@ -45,8 +45,8 @@
 				<div class="main">
 					<h2>Series to Watch</h1>
 					<form class="add-panel">
-						<input type="text" id="seriesInput">
-						<input type="submit" id="seriesButton" value="Add">
+						<input  class="item-input" type="text" id="series-input">
+						<input type="submit" id="series-button" data-index="2" value="Add">
 					</form>
 				</div>
 			</div>
@@ -62,8 +62,8 @@
 				<div class="main">
 					<h2>Books to Read</h1>
 					<form class="add-panel">
-						<input type="text" id="booksInput">
-						<input type="submit" id="booksButton" value="Add">
+						<input class="item-input" type="text" id="books-input">
+						<input type="submit" id="books-button" data-index="3" value="Add">
 					</form>
 				</div>
 			</div>
@@ -79,8 +79,8 @@
 				<div class="main">
 					<h2>Games to Play</h1>
 					<form class="add-panel">
-						<input type="text" id="gamesInput">
-						<input type="submit" id="gamesButton" value="Add">
+						<input class="item-input" type="text" id="games-input">
+						<input type="submit" id="games-button" value="Add"  data-index="4">
 					</form>
 				</div>
 			</div>
@@ -89,24 +89,51 @@
 			</ul>
 		</div>
 
-<!-- 				<div class="table table-new">
-			<div class="header">
-				<img src="img/new.png">
-				<div class="main">
-					<h2>Your own list</h1>
-					<form class="add-panel">
-						<input type="text" id="gamesInput">
-						<input type="submit" id="gamesButton" value="Add">
-					</form>
-				</div>
-			</div>
-			<ul> -->
-
-			</ul>
-		</div>
 	</div>
-</div>
-</div>
+<div class="add-new">
+		<button class="add-new-button"><img src="./img/new.png"></button>
+		<h2>Add New Table</h2>
+	</div>
+
+		<div class="top-layer">
+
+			<form class="new-table-window">
+							<p class="exit">X</p>
+				<h2> Add New Table </h2>
+
+					<input type="text" id="new-title"  placeholder="Your Table Name" required>
+
+				<h3>Choose an icon</h3>
+				<span>
+					<label>
+						<input type="radio" name="icons" value="people" checked>
+						<img src="./img/people.png">
+					</label>
+					<label>
+						<input type="radio" name="icons" value="home">
+						<img src="./img/home.png">
+					</label>
+					<label>
+						<input type="radio" name="icons" value="xbox">
+						<img src="./img/xbox.png">
+					</label>
+						<label>
+						<input type="radio" name="icons" value="fridge">
+						<img src="./img/fridge.png">
+					</label>
+						<label>
+						<input type="radio" name="icons" value="clothes">
+						<img src="./img/clothes.png">
+					</label>
+						<label>
+						<input type="radio" name="icons" value="desk">
+						<img src="./img/desk.png">
+					</label>
+
+			</span>
+			<input type="submit" class="save" value="Save">
+						</form>
+		</div>
 
 
 <footer>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></footer>

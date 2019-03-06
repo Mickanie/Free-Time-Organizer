@@ -7,7 +7,12 @@ body {
    background-size: cover;
      background-repeat: no-repeat;
      bacgkround-position: center bottom;
-     height: 100vh;
+     height: 91vh;
+     font-weight: 700;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 .title {
@@ -129,7 +134,7 @@ ul input:checked + label:before {
   content: "\f058";
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  color: #68BA75;
+  color: #2CCE70;
 }
 
 li button {
@@ -151,11 +156,115 @@ li:hover button {
 footer {
   position: fixed;
   bottom: 0;
-  font-family: Georgia, cursive;
+font-family: 'Laila', serif;
   font-size: 15px;
+  color: grey;
 }
 
+footer a {
+  color:grey;
+  text-decoration: none;
+}
+
+.add-new {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.add-new h2 {
+  margin-top: 0;
+}
+
+.add-new-button {
+  background: rgba(0,0,0,0);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+#new-title {
+  padding: 7px;
+}
+
+
+.top-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color:rgba(0,0,0,0.7);
+  display: none;
+}
+
+.new-table-window {
+  background: white;
+  width: 50%;
+
+  margin: auto;
+  padding: 30px;
+  margin-top: 18vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.new-table-window h2 {
+  margin: 10px;
+  font-size: 35px;
+}
+.save {
+  padding: 3px 15px 3px 15px;
+  background-color:  #1F5073;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  margin-top:30px;
+  font-size: 30px;
+  font-family: 'Amatic SC', cursive;
+  font-weight: 900;
+}
+
+[type=radio] { 
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* IMAGE STYLES */
+[type=radio] + img {
+  cursor: pointer;
+  margin: 20px;
+}
+
+/* CHECKED STYLES */
+[type=radio]:checked + img {
+  border: 5px solid #5FDADE;
+  border-radius: 50%;
+  background: grey;
+}
+
+.exit {
+  position: absolute;
+  top: 6px;
+  right: 23px;
+  cursor: pointer;
+  font-family: Arial;
+  font-weight: 900;
+}
+
+
+
 @media only screen and (max-width: 890px) {
+  
   .title {
     margin-top: 30px;
   }
@@ -166,5 +275,18 @@ footer {
 
   body {
       background-size: 100% 100%;
+  }
+
+  .top-layer span {
+    margin: auto;
+ 
+  }
+
+  .new-table-window {
+    width: 70%;
+  }
+
+  footer {
+    display: none;
   }
 }
