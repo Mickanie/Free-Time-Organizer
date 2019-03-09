@@ -202,6 +202,7 @@ footer a {
   height: 100vh;
   background-color:rgba(0,0,0,0.7);
   display: none;
+  z-index: 3;
 }
 
 .new-table-window {
@@ -262,6 +263,10 @@ footer a {
   font-family: Arial;
   font-weight: 900;
   z-index: 2;
+}
+
+.exit-dialogue {
+  z-index: 3;
 }
 
 
