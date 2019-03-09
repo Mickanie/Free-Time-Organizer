@@ -39,7 +39,8 @@ h1 {
   background-color: rgba(0,0,0,0.3);
   margin: 10px;
   align-self: flex-start;
-  max-width: 600px;
+  max-width: 500px;
+  position: relative;
   
 }
 
@@ -48,6 +49,7 @@ h1 {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   background-color: rgba(0,0,0,0.5);
+  position: relative;
 
 
 }
@@ -254,11 +256,12 @@ footer a {
 
 .exit {
   position: absolute;
-  top: 6px;
-  right: 23px;
+  top: 0;
+  right: 18px;
   cursor: pointer;
   font-family: Arial;
   font-weight: 900;
+  z-index: 2;
 }
 
 

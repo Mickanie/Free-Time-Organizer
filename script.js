@@ -20,7 +20,7 @@ const games= [];
 items = JSON.parse(localStorage.getItem('items')) || [movies, series, books, games];
 
 const addNewButton = document.querySelector('.add-new-button');
-const exit = document.querySelector('.exit');
+const exit = document.querySelector('.exit-dialogue');
 const save = document.querySelector('.save');
 const board = document.querySelector('.tables');
 
@@ -28,7 +28,7 @@ const board = document.querySelector('.tables');
 /*console.log(items);*/
 
 const addItem = (event) => {
-
+	console.log('click')
 	event.preventDefault()// stops from reloading
 
 	let input = event.target.firstElementChild;
@@ -80,28 +80,52 @@ const deleteItem = (event) => {
 
 }
 
+const deleteTable = (e) => {
+	console.log('click')
+	console.log(e.target.parentNode.dataset.index);
+	const tableToRemove = e.target.parentNode
+	const index = tableToRemove.dataset.index;
+	document.querySelector('.tables').removeChild(tableToRemove);
+	items.splice(index-1, index);
+		localStorage.setItem('items', JSON.stringify(items));
+		if (index > 4) {
+			const itemToRemove = (index - 3).toString();
+			localStorage.removeItem(itemToRemove);
+		}
+		
+		updateTables();
+
+}
+
+
+
 const updateTables = () => {
 
-	 ul = document.querySelectorAll('ul');
+	ul = document.querySelectorAll('ul');
 
 
-			for (let n=0; n<ul.length; n++) {
-				ul[n].innerHTML = items[n].map((item, i) => {
-					 return `
-	      <li>
-	        <input type="checkbox" data-index=${n} data-id="${i}" ${item.done ? 'checked' : ''}/>
-	        <label class="li-label" for="item${i}">${item.name}</label><button><img src="./img/delete.png" class="delete-img"></button>
-	      </li>
+	for (let n=0; n<ul.length; n++) {
+		ul[n].innerHTML = items[n].map((item, i) => {
+			return `
+			<li>
+			<input type="checkbox" data-index=${n} data-id="${i}" ${item.done ? 'checked' : ''}/>
+			<label class="li-label" for="item${i}">${item.name}</label><button><img src="./img/delete.png" class="delete-img"></button>
+			</li>
 
-	      `
-	    }).join(''); 
+			`
+		}).join(''); 
 
-			};
-			let deleteButtons = document.querySelectorAll('.delete-img');
-			deleteButtons.forEach(button => button.addEventListener('click', deleteItem));
-		  document.querySelectorAll('.li-label').forEach(li=>li.addEventListener('click', toggleDone));
-		  forms = document.querySelectorAll('.add-panel');
-		  forms.forEach(buttonos => buttonos.addEventListener('submit', addItem));
+	};
+	let deleteButtons = document.querySelectorAll('.delete-img');
+	deleteButtons.forEach(button => button.addEventListener('click', deleteItem));
+
+	document.querySelectorAll('.li-label').forEach(li=>li.addEventListener('click', toggleDone));
+
+	forms = document.querySelectorAll('.add-panel');
+	forms.forEach(buttonos => buttonos.addEventListener('submit', addItem));
+
+	let deleteTableButtons = document.querySelectorAll('.delete-table');
+	deleteTableButtons.forEach(button => button.addEventListener('click', deleteTable))
 
 }
 
@@ -109,12 +133,14 @@ const createTableElement = (title, img, index) => {
 		let newTable = document.createElement('div');
 	newTable.classList.add('table');
 	newTable.classList.add('custom-table');
+	newTable.setAttribute("data-index", `${index}`);
 	board.appendChild(newTable);
 
 	newTable.innerHTML = 
 
-		`	
+		`	<p class="exit delete-table">X</p>
 			<div class="header">
+					
 				<img src="img/${img}.png">
 				<div class="main">
 					<h2>${title}</h1>
@@ -128,6 +154,8 @@ const createTableElement = (title, img, index) => {
 			</div>
 			<ul>
 			</ul>`;
+
+			updateTables();
 
 		
 }
@@ -144,7 +172,7 @@ if (localStorage.length > 1) {
 		index = array[2];
 
 		createTableElement(title, img, index);
-		updateTables();
+		
 	}
 
 }
@@ -194,9 +222,7 @@ document.querySelectorAll('.li-label').forEach(li=>li.addEventListener('click', 
 
 
 
-
-
-
+updateTables();
 
 addNewButton.addEventListener('click', showTableDialogue);
 
