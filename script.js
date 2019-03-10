@@ -25,8 +25,6 @@ const save = document.querySelector('.save');
 const board = document.querySelector('.tables');
 
 
-/*console.log(items);*/
-
 const addItem = (event) => {
 	console.log('click')
 	event.preventDefault()// stops from reloading
@@ -52,7 +50,6 @@ const addItem = (event) => {
 
  const toggleDone = (e) => {
 
-    /*if (!e.target.matches('input')) return; //skip this unless its an input*/
     const el = e.target.previousElementSibling;
     const index = el.dataset.index;
     const id = el.dataset.id;
@@ -68,8 +65,8 @@ const addItem = (event) => {
 const deleteItem = (event) => {
 	console.log(event.target.parentNode.parentNode)
 	const li = event.target.parentNode.parentNode;
-	//text content of li:
-	const info = li.children[1].textContent; //remove whitespaces
+
+	const info = li.children[1].textContent; 
 	const index = li.children[0].dataset.index; //indicates which table is it in
 
 	li.remove();
@@ -179,13 +176,6 @@ if (localStorage.length > 1) {
 
 
 
-
-
-
-
-
-/*updateTables();*/
-
 const showTableDialogue = () => {
 	document.querySelector('.top-layer').style.display = "block";
 }
@@ -198,7 +188,9 @@ const exitDialogue = () => {
 
 const addNewTable = (e) => {
 	e.preventDefault();
-	const title = event.target.parentNode.children[2].value;
+	const input = event.target.parentNode.children[2]
+	const title = input.value;
+	input.value = "";
 	const img = document.querySelector('input[name="icons"]:checked').value;
 	let index = items.length + 1;
 	
@@ -214,12 +206,6 @@ const addNewTable = (e) => {
 
 	
 }
-
-/*
-document.querySelectorAll('.li-label').forEach(li=>li.addEventListener('click', toggleDone));*/
-
-
-
 
 
 updateTables();
